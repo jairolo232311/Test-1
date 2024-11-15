@@ -1,0 +1,57 @@
+local PabloLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/BatuKvi123/PabloLibV3/main/PabloLibV3"))()
+local window = PabloLib:Create(
+"Fuse",
+"Enabled",
+"p"
+)
+
+--Tabs--
+
+local tab1 = window:CreateTab("By Jairo??")
+--Buttons
+
+tab1:CreateButton("Cancel", function()
+_G.running = false
+end)
+
+tab1:CreateButton("Fuse 1", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/1/refs/heads/main/1"))()
+end)
+
+tab1:CreateButton("1-->2", function()
+
+end)
+
+tab1:CreateButton("Fuse 2", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/Fuse2/refs/heads/main/2"))()
+end)
+
+tab1:CreateButton("Fuse 3", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/Fuse-3-/refs/heads/main/A"))()
+end)
+
+tab1:CreateButton("3-->4", function()
+
+end)
+
+tab1:CreateButton("Fuse 4", function()
+_G.running = true
+while _G.running do
+loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/4/refs/heads/main/4"))()
+task.wait()
+end
+end)
+
+local tab1 = window:CreateTab("Sell?")
+
+tab1:CreateButton("Sell", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/Sell/refs/heads/main/1"))()
+end)
+
+tab1:CreateButton("Sell F-4", function()
+_G.running = true
+while _G.running do
+loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/Sell-2-F-4/refs/heads/main/F-4"))()
+task.wait()
+end
+end)
