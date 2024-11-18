@@ -171,6 +171,30 @@ end,
         local args = { [1] = "Hand Green" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
+["Heart Headphones"] = function()
+        local args = { [1] = "Heart Headphones" }
+        game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+    end,
+["Heart Balloon"] = function()
+        local args = { [1] = "Heart Balloon" }
+        game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+    end,
+["Demorgan"] = function()
+        local args = { [1] = "Demogorgan" }
+        game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+    end,
+["Heart Lightstick"] = function()
+        local args = { [1] = "Heart Lightstick" }
+        game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+    end,
+["Heart Cake"] = function()
+        local args = { [1] = "Coraz\195\179n Cake" }
+        game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+    end,
+["Heart Gift"] = function()
+        local args = { [1] = "Heart Gift" }
+        game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+    end,
     ["Hand Cyan"] = function()
         local args = { [1] = "Hand Cyan" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
