@@ -163,6 +163,10 @@ end,
         local args = { [1] = "Hand Yellow" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
+["Hand Rainbow"] = function()
+        local args = { [1] = "Hand Rainbow" }
+        game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+    end,
     ["Hand Green"] = function()
         local args = { [1] = "Hand Green" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
