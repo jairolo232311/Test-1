@@ -227,27 +227,27 @@ end,
         local args = { [1] = "Hand Pink" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
-["E"] = function()
+["𝐄"] = function()
         local args = { [1] = "E" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
-["D"] = function()
+["𝐃"] = function()
         local args = { [1] = "D" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
-["C"] = function()
+["𝐂"] = function()
         local args = { [1] = "C" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
-["B"] = function()
+["𝐁"] = function()
         local args = { [1] = "B" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
-["A"] = function()
+["𝐀"] = function()
         local args = { [1] = "A" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
-["F"] = function()
+["𝐅"] = function()
         local args = { [1] = "F" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
