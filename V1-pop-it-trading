@@ -94,18 +94,18 @@ local Scripts = {
         local args = { [1] = "Hello Snow" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
 end,
-["XRay"] = function()
-        game.Players.LocalPlayer.XRay.Value=true 
-    end,
     ["Box Toy Harambe"] = function()
         local args = { [1] = "Box Toy Harambe" }
         game:GetService("ReplicateStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
-["Golden ticket zone"] = function()
-        game.Workspace.GoldenToilet.HitDetect:Destroy()
+["Golden Ticket zone"] = function()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/Nadiehp/Golden-ticket-zone-/refs/heads/main/Zone%20golden%20ticket"))()
     end,
-["Enter the VIP zone"] = function()
- game.Workspace.Map.VIP:Destroy
+["Enter the VIP Zone"] = function()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/X/refs/heads/main/D-2"))()
+    end,
+["XRay"] = function()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/X/refs/heads/main/V-1"))()
     end,
     ["Flower Rainbow"] = function()
         local args = { [1] = "Flower Rainbow" }
