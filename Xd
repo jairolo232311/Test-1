@@ -26,11 +26,19 @@ tab1:CreateButton("Fuse 2", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/Fuse2/refs/heads/main/2"))()
 end)
 
+tab1:CreateButton("2-->3", function()
+
+end)
+
 tab1:CreateButton("Fuse 3", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/Fuse2/refs/heads/main/F2-3"))()
+end)
+
+tab1:CreateButton("Fuse 4", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/Fuse-3-/refs/heads/main/A"))()
 end)
 
-tab1:CreateButton("3-->4", function()
+tab1:CreateButton("4-->5", function()
 
 end)
 
