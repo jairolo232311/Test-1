@@ -23,11 +23,7 @@ tab1:CreateButton("1-->2", function()
 end)
 
 tab1:CreateButton("Fuse 2", function()
-_G.running = true
-while _G.running do
 loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/Fuse2/refs/heads/main/2"))()
-task.wait()
-end
 end)
 
 tab1:CreateButton("2-->3", function()
@@ -46,12 +42,8 @@ tab1:CreateButton("4-->5", function()
 
 end)
 
-tab1:CreateButton("Fuse 4", function()
-_G.running = true
-while _G.running do
+tab1:CreateButton("Fuse 5", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/4/refs/heads/main/4"))()
-task.wait()
-end
 end)
 
 local tab1 = window:CreateTab("Sell?")
