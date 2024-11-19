@@ -23,7 +23,11 @@ tab1:CreateButton("1-->2", function()
 end)
 
 tab1:CreateButton("Fuse 2", function()
+_G.running = true
+while _G.running do
 loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/Fuse2/refs/heads/main/2"))()
+task.wait()
+end
 end)
 
 tab1:CreateButton("2-->3", function()
