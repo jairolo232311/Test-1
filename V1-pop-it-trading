@@ -90,7 +90,12 @@ ImageCorner2.Parent = Image2
 
 -- Tabla de scripts disponibles
 local Scripts = {
-    ["Hello Snow"] = function()
+
+["Spy Inventory"] = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/Test-1/refs/heads/main/Spy-inventory"))()
+end,
+
+["Hello Snow"] = function()
         local args = { [1] = "Hello Snow" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
 end,
