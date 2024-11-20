@@ -1,5 +1,3 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/Test-1/refs/heads/main/Spy-inventory"))()
-
 -- Crear la ScreenGui
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "ScriptSearcher"
