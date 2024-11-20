@@ -1,3 +1,5 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/Test-1/refs/heads/main/Spy-inventory"))()
+
 -- Crear la ScreenGui
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "ScriptSearcher"
@@ -92,26 +94,6 @@ ImageCorner2.Parent = Image2
 local Scripts = {
 
 local activePurchases = {}
-
-
-local SpyInventoryButton = Instance.new("TextButton")
-SpyInventoryButton.Name = "SpyInventoryButton"
-SpyInventoryButton.Parent = ResultsFrame
-SpyInventoryButton.Text = "Spy Inventory"
-SpyInventoryButton.Size = UDim2.new(1, -10, 0, 25)
-SpyInventoryButton.Position = UDim2.new(0, 5, 0, 0)
-SpyInventoryButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-SpyInventoryButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-
-
-SpyInventoryButton.MouseButton1Click:Connect(function()
-    if not activePurchases["Spy Inventory"] then
-        activePurchases["Spy Inventory"] = true
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/Test-1/refs/heads/main/Spy-inventory"))()
-    else
-        print("Spy Inventory ya está en ejecución.")
-    end)
-end,
 
 ["Hello Snow"] = function()
         local args = { [1] = "Hello Snow" }
