@@ -99,6 +99,26 @@ end,
         local args = { [1] = "Box Toy Harambe" }
         game:GetService("ReplicateStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
+["Hello Catty"] = function()
+        local args = { [1] = "Hellow Catty" }
+        game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+    end,
+["Rainbow Star"] = function()
+        local args = { [1] = "Rainbow Star" }
+        game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+    end,
+["Mario"] = function()
+        local args = { [1] = "Markio" }
+        game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+    end,
+["Luigi"] = function()
+        local args = { [1] = "Luisi" }
+        game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+    end,
+["Gold Coin"] = function()
+        local args = { [1] = "Gold Coin" }
+        game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+    end,
 ["Golden Ticket zone"] = function()
  loadstring(game:HttpGet("https://raw.githubusercontent.com/Nadiehp/Golden-ticket-zone-/refs/heads/main/Zone%20golden%20ticket"))()
     end,
@@ -140,6 +160,10 @@ end,
         local args = { [1] = "Paperclip" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
+["Gold Paperclip (It is necessary to be VIP)"] = function()
+        local args = { [1] = "Gold Paperclip" }
+        game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+    end,
     ["Hello Scary"] = function()
         local args = { [1] = "Hello Scary" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args)) 
@@ -178,6 +202,10 @@ end,
     end,
 ["Heart Balloon"] = function()
         local args = { [1] = "Heart Balloon" }
+        game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+    end,
+["Demorgan Kawaii"] = function()
+        local args = { [1] = "Demogorgan Kawaii" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
 ["Demorgan"] = function()
