@@ -93,6 +93,7 @@ local Scripts = {
 
 ["Drop Red Loot"] = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/Test-1/refs/heads/main/Drop-Red-Loot"))()
+end,
 
 ["Hello Snow"] = function()
         local args = { [1] = "Hello Snow" }
