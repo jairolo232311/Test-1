@@ -99,10 +99,10 @@ end,
         local args = { [1] = "Hello Snow" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
 end,
-    ["Box Toy Harambe"] = function()
+["Box Toy Harambe"] = function()
         local args = { [1] = "Box Toy Harambe" }
-        game:GetService("ReplicateStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
-    end,
+        game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+end,
 ["Hello Catty"] = function()
         local args = { [1] = "Hellow Catty" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
@@ -165,7 +165,7 @@ end,
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
 ["Gold Paperclip (It is necessary to be VIP)"] = function()
-        local args = { [1] = "Gold Paperclip" }
+        local args = { [1] = "Paperclip Gold" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
     ["Hello Scary"] = function()
