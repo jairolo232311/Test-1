@@ -1,0 +1,219 @@
+local player = game.Players.LocalPlayer
+local proximityRange = 3.7  -- Rango de proximidad
+local playerGui = player:WaitForChild("PlayerGui")
+
+-- Crear el UI original
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Parent = playerGui
+ScreenGui.ResetOnSpawn = false
+
+local draggableFrame = Instance.new("Frame")
+draggableFrame.Size = UDim2.new(0, 400, 0, 370)
+draggableFrame.Position = UDim2.new(0.5, -200, 0.5, -195)
+draggableFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+draggableFrame.BorderSizePixel = 0
+draggableFrame.Visible = false
+draggableFrame.Parent = ScreenGui
+
+local UICorner = Instance.new("UICorner")
+UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.Parent = draggableFrame
+
+-- Crear el botón de cerrar "X" (fuera del Frame)
+local closeButton = Instance.new("TextButton")
+closeButton.Size = UDim2.new(0, 30, 0, 30)
+closeButton.Position = UDim2.new(1, -40, 0, 5)  -- Ajuste para sobresalir ligeramente
+closeButton.Text = "X"
+closeButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+closeButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+closeButton.Font = Enum.Font.SourceSans
+closeButton.TextSize = 24
+closeButton.Parent = draggableFrame
+
+local closeButtonCorner = Instance.new("UICorner")
+closeButtonCorner.CornerRadius = UDim.new(0, 6)
+closeButtonCorner.Parent = closeButton
+
+closeButton.MouseButton1Click:Connect(function()
+    draggableFrame.Visible = false
+end)
+
+-- Crear el TextBox para el nombre del jugador
+local TextBox = Instance.new("TextBox")
+TextBox.Size = UDim2.new(0, 300, 0, 40)
+TextBox.Position = UDim2.new(0.5, -995, 0, 10)
+TextBox.PlaceholderText = "Ingresa el nombre del jugador"
+TextBox.ClearTextOnFocus = false
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextBox.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+TextBox.Font = Enum.Font.SourceSans
+TextBox.TextSize = 18
+TextBox.Parent = draggableFrame
+
+local TextBoxCorner = Instance.new("UICorner")
+TextBoxCorner.CornerRadius = UDim.new(0, 8)
+TextBoxCorner.Parent = TextBox
+
+-- Crear la imagen
+local ImageLabel = Instance.new("ImageLabel")
+ImageLabel.Size = UDim2.new(0.028, 37, 0.12, 0)  
+ImageLabel.Position = UDim2.new(0, 304, 0.0012, 10)  
+ImageLabel.Image = "rbxassetid://75305822602036"  
+ImageLabel.BackgroundTransparency = 1
+ImageLabel.Parent = draggableFrame
+
+local ImageLabelCorner = Instance.new("UICorner")
+ImageLabelCorner.CornerRadius = UDim.new(0, 6)
+ImageLabelCorner.Parent = ImageLabel
+
+-- Crear el TextBox para búsqueda de ítem
+local ItemBox = Instance.new("TextBox")
+ItemBox.Size = UDim2.new(0.7, -26, 0, 45)
+ItemBox.Position = UDim2.new(0.5, -175, 0, 12)
+ItemBox.PlaceholderText = "Buscar ítem"
+ItemBox.ClearTextOnFocus = false
+ItemBox.Text = ""
+ItemBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+ItemBox.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+ItemBox.Font = Enum.Font.SourceSans
+ItemBox.TextSize = 16
+ItemBox.Parent = draggableFrame
+
+local ItemBoxCorner = Instance.new("UICorner")
+ItemBoxCorner.CornerRadius = UDim.new(0, 8)
+ItemBoxCorner.Parent = ItemBox
+
+-- Crear el ScrollingFrame
+local scrollingFrame = Instance.new("ScrollingFrame")
+scrollingFrame.Size = UDim2.new(1, -10, 1, -77)
+scrollingFrame.Position = UDim2.new(0, 10, 0, 67)
+scrollingFrame.ScrollBarThickness = 12
+scrollingFrame.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+scrollingFrame.BorderSizePixel = 0
+scrollingFrame.Parent = draggableFrame
+
+local ScrollingFrameCorner = Instance.new("UICorner")
+ScrollingFrameCorner.CornerRadius = UDim.new(0, 10)
+ScrollingFrameCorner.Parent = scrollingFrame
+
+local UIListLayout = Instance.new("UIListLayout")
+UIListLayout.Padding = UDim.new(0, 5)
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Parent = scrollingFrame
+
+-- Función para mostrar los ítems de un jugador
+local function showPlayerItems(playerName, searchItem)
+    -- Eliminar los elementos previos en el ScrollingFrame
+    for _, child in ipairs(scrollingFrame:GetChildren()) do
+        if child:IsA("TextLabel") or child:IsA("ImageLabel") then
+            child:Destroy()
+        end
+    end
+
+    -- Buscar el jugador en la lista de jugadores
+    local player = game.Players:FindFirstChild(playerName)
+    if player then
+        local items = player:FindFirstChild("Items")
+        if items then
+            for _, item in ipairs(items:GetChildren()) do
+                local itemName = item.Name:lower()
+                local itemValue = tostring(item.Value):lower()
+
+                -- Filtrar según el texto de búsqueda
+                if not searchItem or itemName:find(searchItem) or itemValue:find(searchItem) then
+                    -- Crear un label para el ítem
+                    local itemLabel = Instance.new("TextLabel")
+                    itemLabel.Size = UDim2.new(1, -10, 0, 30)
+                    itemLabel.Text = item.Name .. " - Value: " .. tostring(item.Value)
+                    itemLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+                    itemLabel.BackgroundTransparency = 0.2
+                    itemLabel.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+                    itemLabel.Font = Enum.Font.SourceSans
+                    itemLabel.TextSize = 16
+                    itemLabel.Parent = scrollingFrame
+
+                    local ItemLabelCorner = Instance.new("UICorner")
+                    ItemLabelCorner.CornerRadius = UDim.new(0, 6)
+                    ItemLabelCorner.Parent = itemLabel
+                end
+            end
+        end
+    end
+end
+
+-- Función para crear ProximityPrompt fuera del personaje
+local function createProximityPrompt(character)
+    local humanoidRootPart = character:FindFirstChild("HumanoidRootPart")
+    
+    if humanoidRootPart then
+        -- Crear la parte para el ProximityPrompt
+        local proximityPromptPart = Instance.new("Part")
+        proximityPromptPart.Size = Vector3.new(2, 2, 2)  -- Tamaño pequeño
+        proximityPromptPart.Anchored = true
+        proximityPromptPart.CanCollide = false
+        proximityPromptPart.Transparency = 1
+        proximityPromptPart.Parent = character
+
+        -- Crear el ProximityPrompt
+        local proximityPrompt = Instance.new("ProximityPrompt")
+        proximityPrompt.ActionText = "Ver Inventario"
+        proximityPrompt.ObjectText = character.Name
+        proximityPrompt.MaxActivationDistance = proximityRange
+        proximityPrompt.HoldDuration = 0.3
+        proximityPrompt.Parent = proximityPromptPart  -- Asociamos el ProximityPrompt a esta parte
+
+        proximityPrompt.Triggered:Connect(function()
+            draggableFrame.Visible = true
+            TextBox.Text = character.Name  -- Mostrar el nombre del jugador en el TextBox
+        end)
+
+        -- Actualizar la posición del ProximityPrompt en función de la cámara
+        game:GetService("RunService").Heartbeat:Connect(function()
+            if proximityPromptPart and humanoidRootPart then
+                -- Calculamos la dirección hacia la cámara
+                local camera = game.Workspace.CurrentCamera
+                local cameraDirection = (camera.CFrame.Position - humanoidRootPart.Position).unit
+                local offset = cameraDirection * 2  -- Coloca el ProximityPrompt a 5 studs frente al personaje
+                proximityPromptPart.Position = humanoidRootPart.Position + offset
+            end
+        end)
+    end
+end
+
+-- Verificar y crear ProximityPrompt para cada jugador
+local function checkAndCreateProximityPrompt(character)
+    if not character:FindFirstChild("ProximityPrompt") then
+        createProximityPrompt(character)
+    end
+end
+
+-- Crear ProximityPrompt para cada jugador (excepto el jugador local)
+for _, otherPlayer in pairs(game.Players:GetPlayers()) do
+    if otherPlayer ~= player then
+        if otherPlayer.Character then
+            checkAndCreateProximityPrompt(otherPlayer.Character)
+        end
+    end
+end
+
+-- Manejar el caso de jugadores que aparezcan después
+game.Players.PlayerAdded:Connect(function(otherPlayer)
+    if otherPlayer ~= player then
+        otherPlayer.CharacterAdded:Connect(function(character)
+            checkAndCreateProximityPrompt(character)
+        end)
+    end
+end)
+
+-- Función para manejar la búsqueda automática cuando se escribe
+ItemBox:GetPropertyChangedSignal("Text"):Connect(function()
+    local searchText = ItemBox.Text:lower()
+    showPlayerItems(TextBox.Text, searchText)
+end)
+
+-- Mostrar los ítems cuando se abre el inventario (al principio, al escribir el nombre del jugador)
+TextBox:GetPropertyChangedSignal("Text"):Connect(function()
+    local playerName = TextBox.Text
+    showPlayerItems(playerName, "")
+end)
