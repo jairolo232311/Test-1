@@ -131,6 +131,10 @@ end,
         local args = { [1] = "Gold Coin" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
+["Omb Bomb"] = function()
+        local args = { [1] = "Omb Bomb" }
+        game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+    end,
 ["Golden Ticket zone"] = function()
  loadstring(game:HttpGet("https://raw.githubusercontent.com/Nadiehp/Golden-ticket-zone-/refs/heads/main/Zone%20golden%20ticket"))()
     end,
