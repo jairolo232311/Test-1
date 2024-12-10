@@ -7,7 +7,7 @@ local window = PabloLib:Create(
 
 --Tabs--
 
-local tab1 = window:CreateTab("By Jairo??")
+local tab1 = window:CreateTab("Test")
 --Buttons
 
 tab1:CreateButton("Cancel", function()
