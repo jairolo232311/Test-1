@@ -127,6 +127,10 @@ end,
         local args = { [1] = "Luisi" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
+["Helloshi"] = function()
+        local args = { [1] = "Helloshi" }
+        game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+    end,
 ["Gold Coin"] = function()
         local args = { [1] = "Gold Coin" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
