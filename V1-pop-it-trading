@@ -111,7 +111,7 @@ end,
         local args = { [1] = "Lil Dude" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
-["Lil Dude"] = function()
+["Seriously, my friend."] = function()
         local args = { [1] = "Lil Dude Real" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
