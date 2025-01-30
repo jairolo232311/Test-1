@@ -5,7 +5,6 @@ local shopFrame = screenGui:WaitForChild("Shop"):WaitForChild("ScrollingFrame")
 
 local isRunning = {}
 
--- Mapeo de nombres incorrectos a nombres reales en el juego
 local nameMappings = {
     ["Demigaga"] = "Demogorgan",
     ["Demigaga Kawaii"] = "Demogorgan Kawaii",
@@ -16,17 +15,16 @@ local nameMappings = {
 local allowedItems = {
     "Flower Rainbow", "Flower Red", "Flower White", "Flower Black", "Lil Dude Real", "Lil Dude", 
     "Hello Snow", "Box Toy Harambe", "Box Toy  House", "Box Toy Air", "Box Toy Noob", "Box Toy Sanic", 
-    "Box Toy SandMan", "Box Toy Lem", "Box Toy Box Toy", "Box Toy Egg",Green Ooze, "Hellow Catty", "Rainbow Star", 
+    "Box Toy SandMan", "Box Toy Lem", "Box Toy Box Toy", "Box Toy Egg", "Hellow Catty", "Rainbow Star", 
     "Markio", "Luisi", "Helloshi", "Gold Coin", "Omb Bomb", "Dart", "Retro Bike", "Cardboard X", 
     "Paperclip", "Paperclip Gold", "Apple Core", "Wet Floor Sign", "Hello Scary", "Gold Strawberry Cake", 
     "Strawberry Cake", "Cake?", "Bundt Cake", "Rainbow Strawberry Cake", "Hand Yellow", "Hand Rainbow", 
     "Hand Green", "Heart Headphones", "Heart Balloon", "Demogorgan", "Demogorgan Kawaii", "Heart Lightstick", 
     "Corazón Cake", "Heart Gift", "Heart Light", "Hand Cyan", "Hand Blue", "Hand Red", "Hand Orange", 
-    "Hand Black", "Hand White", "Hand Purple", "Hand Pink", "E", "D", "C", "B", "A", "F", "Squid", 
+    "Hand Black", "Hand White", "Hand Purple", "Hand Pink", "E", "D", "C", "B", "A", "F", "Squid", "Green Ooze, 
     "Puzzler Head", "Puzzle Key", "XOX Controller", "Tix Tox", "Tweet", "Inxta", "Silver"
 }
 
--- Conectar eventos de ImageButton en todos los ítems de la tienda
 for _, item in ipairs(shopFrame:GetChildren()) do
     if item:IsA("Frame") then
         local itemName = nameMappings[item.Name] or item.Name
@@ -55,12 +53,11 @@ for _, item in ipairs(shopFrame:GetChildren()) do
     end
 end
 
--- Crear el botón sin sombra
 local stopButton = Instance.new("TextButton")
 stopButton.Size = UDim2.new(0, 70, 0, 60)
-stopButton.Position = UDim2.new(0.9, -100, 0.95, -30) -- Centrado en la parte inferior
+stopButton.Position = UDim2.new(0.9, -100, 0.95, -30)
 stopButton.AnchorPoint = Vector2.new(0.5, 0.5)
-stopButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- Blanco sólido
+stopButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 stopButton.TextColor3 = Color3.fromRGB(0, 0, 0)
 stopButton.Text = "Stop"
 stopButton.Font = Enum.Font.GothamBold
@@ -68,21 +65,18 @@ stopButton.TextSize = 20
 stopButton.BorderSizePixel = 0
 stopButton.Parent = screenGui
 
--- Agregar esquinas redondeadas
 local corner = Instance.new("UICorner")
 corner.CornerRadius = UDim.new(0, 12)
 corner.Parent = stopButton
 
--- Animación al pasar el mouse
 stopButton.MouseEnter:Connect(function()
-    stopButton.BackgroundColor3 = Color3.fromRGB(200, 200, 200) -- Gris claro
+    stopButton.BackgroundColor3 = Color3.fromRGB(200, 200, 200)
 end)
 
 stopButton.MouseLeave:Connect(function()
-    stopButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255) -- Blanco sólido
+    stopButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 end)
 
--- Función para detener todas las compras
 local function stopAll()
     for itemName, _ in pairs(isRunning) do
         isRunning[itemName] = false
