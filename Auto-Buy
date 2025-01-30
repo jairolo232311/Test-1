@@ -16,7 +16,7 @@ local nameMappings = {
 local allowedItems = {
     "Flower Rainbow", "Flower Red", "Flower White", "Flower Black", "Lil Dude Real", "Lil Dude", 
     "Hello Snow", "Box Toy Harambe", "Box Toy  House", "Box Toy Air", "Box Toy Noob", "Box Toy Sanic", 
-    "Box Toy SandMan", "Box Toy Lem", "Box Toy Box Toy", "Box Toy Egg", "Hellow Catty", "Rainbow Star", 
+    "Box Toy SandMan", "Box Toy Lem", "Box Toy Box Toy", "Box Toy Egg",Green Ooze, "Hellow Catty", "Rainbow Star", 
     "Markio", "Luisi", "Helloshi", "Gold Coin", "Omb Bomb", "Dart", "Retro Bike", "Cardboard X", 
     "Paperclip", "Paperclip Gold", "Apple Core", "Wet Floor Sign", "Hello Scary", "Gold Strawberry Cake", 
     "Strawberry Cake", "Cake?", "Bundt Cake", "Rainbow Strawberry Cake", "Hand Yellow", "Hand Rainbow", 
