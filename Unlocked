@@ -1,15 +1,12 @@
 repeat task.wait() until game:IsLoaded()
 
--- Nombres de los objetos a modificar (Solo para eliminar atributos)
 local removeAttributesFrom = {"Flower Rainbow", "Flower Red", "Flower White", "Flower Black", "Lil Dude Real", "Lil Dude", "Hello Snow", "Box Toy Harambe", "Box Toy  House", "Box Toy Air", "Box Toy Noob", "Box Toy Sanic", "Box Toy SandMan", "Box Toy Lem", "Box Toy Box Toy", "Box Toy Egg", "Hellow Catty", "Lil Dude Real", "Rainbow Star", "Markio", "Luisi", "Helloshi", "Gold Coin", "Omb Bomb", "Flower Rainbow", "Flower Black", "Flower White", "Flower Red", "Dart", "Retro Bike", "Cardboard X", "Paperclip", "Paperclip Gold", "Apple Core", "Wet Floor Sign", "Hello Scary", "Gold Strawberry Cake", "Strawberry Cake", "Cake?", "Bundt Cake", "Rainbow Strawberry Cake", "Hand Yellow", "Hand Rainbow", "Hand Green", "Heart Headphones", "Heart Balloon", "Demogorgan Kawaii", "Demogorgan", "Heart Lightstick", "Corazón Cake", "Heart Gift", "Heart Light", "Hand Cyan", "Hand Blue", "Hand Red", "Hand Orange", "Hand Black", "Hand White", "Hand Purple", "Hand Pink", "E", "D", "C", "B", "A", "F", "Squid", "Green Ooze", "Puzzler Head", "Puzzle Key", "XOX Controller", "Tix Tox", "Tweet", "Inxta", "Silver"}
 local attributesToRemove = {"SpawnedBy", "Retired", "IsMerch", "ComboLocked", "PuzzleReward", "CodeOnly"}
 
--- Nombres de los objetos a los que se les agrega 🤑
 local addEmojiTo = {"Flower Rainbow", "Flower Red", "Flower White", "Flower Black", "Seriously Dude", "Lil Hacker", "Hello Snow", "Box Toy Harambe", "Box Toy  House", "Box Toy Air", "Box Toy Noob", "Box Toy Sanic", "Box Toy SandMan", "Box Toy Lem", "Box Toy Box Toy", "Box Toy Egg", "Hellow Catty", "Lil Dude Real", "Rainbow Star", "Plumber 1", "Plumber 3", "Helloshi", "Gold Coin", "Omb Bomb", "Flower Rainbow", "Flower Black", "Flower White", "Flower Red", "Dart", "Retro Bike", "Cardboard X", "Paperclip", "Paperclip Gold", "Apple Core", "Wet Floor Sign", "Hello Scary", "Gold Strawberry Cake", "Strawberry Cake", "Cake?", "Bundt Cake", "Rainbow Strawberry Cake", "Hand Yellow", "Hand Rainbow", "Hand Green", "Heart Headphones", "Heart Balloon", "Demigaga Kawaii", "Demigaga", "Heart Lightstick", "Corazón Cake", "Heart Gift", "Heart Light", "Hand Cyan", "Hand Blue", "Hand Red", "Hand Orange", "Hand Black", "Hand White", "Hand Purple", "Hand Pink", "E", "D", "C", "B", "A", "F", "Squid", "Green Ooze", "Puzzler Head", "Puzzle Key", "XOX Controller", "Tix Tox", "Tweet", "Inxta", "Silver"}  
-local nameMappings = {["Lil Dude Real"] = "Seriously Dude"}  -- Buscar Seriously Dude en UI
+local nameMappings = {["Lil Dude Real"] = "Seriously Dude"}
 local emoji = " 🤑"
 
--- Eliminar atributos de Items en ReplicatedStorage
 local itemsFolder = game:GetService("ReplicatedStorage"):FindFirstChild("Items")
 if itemsFolder then
     for _, itemName in ipairs(removeAttributesFrom) do
@@ -22,7 +19,6 @@ if itemsFolder then
     end
 end
 
--- Modificar TextLabel.Text y Tags en ScrollingFrame
 local player = game.Players.LocalPlayer
 local shopFrame = player.PlayerGui:FindFirstChild("ScreenGui") and player.PlayerGui.ScreenGui:FindFirstChild("Shop") and player.PlayerGui.ScreenGui.Shop:FindFirstChild("ScrollingFrame")
 
