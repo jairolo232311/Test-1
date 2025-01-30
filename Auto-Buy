@@ -9,12 +9,13 @@ local isRunning = {}
 local nameMappings = {
     ["Demigaga"] = "Demogorgan",
     ["Demigaga Kawaii"] = "Demogorgan Kawaii",
-    ["Lil Dude Real"] = "Seriously Dude",
+    ["Seriously Dude"] = "Lil Dude Real",
+    ["Lil Hacker"] = "Lil Dude",
 }
 
 local allowedItems = {
     "Flower Rainbow", "Flower Red", "Flower White", "Flower Black", "Lil Dude Real", "Lil Dude", 
-    "Hello Snow", "Box Toy Harambe", "Box Toy House", "Box Toy Air", "Box Toy Noob", "Box Toy Sanic", 
+    "Hello Snow", "Box Toy Harambe", "Box Toy  House", "Box Toy Air", "Box Toy Noob", "Box Toy Sanic", 
     "Box Toy SandMan", "Box Toy Lem", "Box Toy Box Toy", "Box Toy Egg", "Hellow Catty", "Rainbow Star", 
     "Markio", "Luisi", "Helloshi", "Gold Coin", "Omb Bomb", "Dart", "Retro Bike", "Cardboard X", 
     "Paperclip", "Paperclip Gold", "Apple Core", "Wet Floor Sign", "Hello Scary", "Gold Strawberry Cake", 
