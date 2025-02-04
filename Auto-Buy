@@ -21,7 +21,7 @@ local allowedItems = {
     "Strawberry Cake", "Cake?", "Bundt Cake", "Rainbow Strawberry Cake", "Hand Yellow", "Hand Rainbow", 
     "Hand Green", "Heart Headphones", "Heart Balloon", "Demogorgan", "Demogorgan Kawaii", "Heart Lightstick", 
     "Corazón Cake", "Heart Gift", "Heart Light", "Hand Cyan", "Hand Blue", "Hand Red", "Hand Orange", 
-    "Hand Black", "Hand White", "Hand Purple", "Hand Pink", "E", "D", "C", "B", "A", "F", "Squid", "Green Ooze, 
+    "Hand Black", "Hand White", "Hand Purple", "Hand Pink", "E", "D", "C", "B", "A", "F", "Squid", "Green Ooze",
     "Puzzler Head", "Puzzle Key", "XOX Controller", "Tix Tox", "Tweet", "Inxta", "Silver"
 }
 
