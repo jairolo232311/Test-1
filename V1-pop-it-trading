@@ -369,7 +369,7 @@ local function showResults(searchQuery)
                     activePurchases[scriptName] = true
                     while isToggledLocal and activePurchases[scriptName] do  -- Continuar mientras esté activado
                         Scripts[scriptName]()  -- Ejecutar la compra
-                        wait(1)
+                        wait(0.06)
                     end
                 else
                     -- Detener la compra
