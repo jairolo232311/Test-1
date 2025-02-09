@@ -9,12 +9,12 @@ local MainFrame = Instance.new("Frame")
 MainFrame.Name = "MainFrame"
 MainFrame.Parent = ScreenGui
 MainFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-MainFrame.Size = UDim2.new(0, 250, 0, 150) -- Tamaño original
-MainFrame.Position = UDim2.new(0.5, -125, 0.5, -75) -- Centrado en pantalla
+MainFrame.Size = UDim2.new(0, 230, 0, 220)
+MainFrame.Position = UDim2.new(0.5, -115, 0.5, -125)
 MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 MainFrame.BorderSizePixel = 0
 MainFrame.Active = true
-MainFrame.Draggable = true -- Hacer el marco movible
+MainFrame.Draggable = true
 
 -- Bordes redondeados
 local UICorner = Instance.new("UICorner")
@@ -28,9 +28,20 @@ Title.Parent = MainFrame
 Title.BackgroundTransparency = 1
 Title.Size = UDim2.new(1, 0, 0, 25)
 Title.Font = Enum.Font.GothamBold
-Title.Text = "NbHp"
-Title.TextSize = 16
+Title.Text = "Search"
+Title.TextSize = 22
 Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+
+local Image = Instance.new("ImageLabel")
+Image.Parent = MainFrame
+Image.Size = UDim2.new(0.15, 0, 0.15, 0)
+Image.Position = UDim2.new(0.82, 0, 0.015, 0)
+Image.Image = "rbxassetid://75305822602036"
+Image.BackgroundTransparency = 1
+
+local ImageCorner = Instance.new("UICorner")
+ImageCorner.CornerRadius = UDim.new(0.1, 0)
+ImageCorner.Parent = Image
 
 -- Campo de texto para buscar
 local SearchBox = Instance.new("TextBox")
@@ -38,7 +49,7 @@ SearchBox.Name = "SearchBox"
 SearchBox.Parent = MainFrame
 SearchBox.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 SearchBox.Size = UDim2.new(0.9, 0, 0, 25)
-SearchBox.Position = UDim2.new(0.05, 0, 0.25, 0)
+SearchBox.Position = UDim2.new(0.05, 0, 0.15, 0)
 SearchBox.Font = Enum.Font.Gotham
 SearchBox.PlaceholderText = "Buscar..."
 SearchBox.TextSize = 14
@@ -54,44 +65,35 @@ local ResultsFrame = Instance.new("ScrollingFrame")
 ResultsFrame.Name = "ResultsFrame"
 ResultsFrame.Parent = MainFrame
 ResultsFrame.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-ResultsFrame.Size = UDim2.new(0.9, 0, 0.4, 0)
-ResultsFrame.Position = UDim2.new(0.05, 0, 0.55, 0)
-ResultsFrame.ScrollBarThickness = 5
-ResultsFrame.CanvasSize = UDim2.new(0, 0, 5, 0) -- Tamaño dinámico para scroll
+ResultsFrame.Size = UDim2.new(0.9, 0, 0.7, 0)
+ResultsFrame.Position = UDim2.new(0.05, 0, 0.30, 0)
+ResultsFrame.ScrollBarThickness = 3
+ResultsFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
 
 -- Bordes redondeados para el ResultsFrame
 local ResultsCorner = Instance.new("UICorner")
 ResultsCorner.CornerRadius = UDim.new(0, 5)
 ResultsCorner.Parent = ResultsFrame
 
--- Primera imagen
-local Image1 = Instance.new("ImageLabel")
-Image1.Parent = MainFrame
-Image1.Size = UDim2.new(0.23, 0, 0.23, 0)
-Image1.Position = UDim2.new(0.38, 0, 0.01, 0)
-Image1.Image = "rbxassetid://140150385951519"
-Image1.BackgroundTransparency = 1
+-- Botón de cancelar
+local CancelButton = Instance.new("TextButton")
+CancelButton.Name = "CancelButton"
+CancelButton.Parent = MainFrame
+CancelButton.Size = UDim2.new(0.3, 0, 0, 25)
+CancelButton.Position = UDim2.new(0.04, 0, 0.03, 0)
+CancelButton.BackgroundColor3 = Color3.fromRGB(130, 0, 0)
+CancelButton.Text = "Stop"
+CancelButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+CancelButton.Font = Enum.Font.GothamBold
+CancelButton.TextSize = 14
 
-local ImageCorner1 = Instance.new("UICorner")
-ImageCorner1.CornerRadius = UDim.new(0.1, 0)
-ImageCorner1.Parent = Image1
+local ButtonCorner = Instance.new("UICorner")
+            ButtonCorner.CornerRadius = UDim.new(0, 5)
+            ButtonCorner.Parent = CancelButton
 
--- Segunda imagen
-local Image2 = Instance.new("ImageLabel")
-Image2.Parent = MainFrame
-Image2.Size = UDim2.new(0.12, 0, 0.2, 0)
-Image2.Position = UDim2.new(0.80, 0, 0.05, 0)
-Image2.Image = "rbxassetid://75305822602036"
-Image2.BackgroundTransparency = 1
-
-local ImageCorner2 = Instance.new("UICorner")
-ImageCorner2.CornerRadius = UDim.new(0.1, 0)
-ImageCorner2.Parent = Image2
-
--- Tabla de scripts disponibles
+-- Lista de scripts
 local Scripts = {
-
-["Drop Red Loot"] = function()
+    ["Drop Red Loot"] = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/Test-1/refs/heads/main/Drop-Red-Loot"))()
 end,
 
@@ -307,80 +309,174 @@ end,
     ["Squid"] = function()
         local args = { [1] = "Squid" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
-    end
+    end,
+["Box Toy House"] = function()
+    local args = { [1] = "Box Toy House" }
+    game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+end,
+
+["Box Toy Air"] = function()
+    local args = { [1] = "Box Toy Air" }
+    game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+end,
+
+["Box Toy Noob"] = function()
+    local args = { [1] = "Box Toy Noob" }
+    game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+end,
+
+["Box Toy Sanic"] = function()
+    local args = { [1] = "Box Toy Sanic" }
+    game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+end,
+
+["Box Toy SandMan"] = function()
+    local args = { [1] = "Box Toy SandMan" }
+    game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+end,
+
+["Box Toy Lem"] = function()
+    local args = { [1] = "Box Toy Lem" }
+    game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+end,
+
+["Box Toy Box Toy"] = function()
+    local args = { [1] = "Box Toy Box Toy" }
+    game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+end,
+
+["Box Toy Egg"] = function()
+    local args = { [1] = "Box Toy Egg" }
+    game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+end,
+
+["Apple Core"] = function()
+    local args = { [1] = "Apple Core" }
+    game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+end,
+
+["Wet Floor Sign"] = function()
+    local args = { [1] = "Wet Floor Sign" }
+    game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+end,
+
+["Heart Light"] = function()
+    local args = { [1] = "Heart Light" }
+    game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+end,
+
+["Puzzler Head"] = function()
+    local args = { [1] = "Puzzler Head" }
+    game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+end,
+
+["Puzzle Key"] = function()
+    local args = { [1] = "Puzzle Key" }
+    game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+end,
+
+["XOX Controller"] = function()
+    local args = { [1] = "XOX Controller" }
+    game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+end,
+
+["Tix Tox"] = function()
+    local args = { [1] = "Tix Tox" }
+    game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+end,
+
+["Tweet"] = function()
+    local args = { [1] = "Tweet" }
+    game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+end,
+
+["Inxta"] = function()
+    local args = { [1] = "Inxta" }
+    game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+end,
+
+["Silver"] = function()
+    local args = { [1] = "Silver" }
+    game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
+end
+
 }
 
--- Crear el botón de cancelación
-local CancelButton = Instance.new("TextButton")
-CancelButton.Name = "CancelButton"
-CancelButton.Parent = MainFrame
-CancelButton.Size = UDim2.new(0.23, 0, 0.23, 0)
-CancelButton.Position = UDim2.new(0.1, 0, 0.01, 0)
-CancelButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-CancelButton.Text = "Cancel"
-CancelButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-CancelButton.Font = Enum.Font.GothamBold
-CancelButton.TextSize = 12
-
--- Tabla para gestionar las compras activas
+-- Tabla para gestionar compras activas
 local activePurchases = {}
 
 -- Función para cancelar todas las compras activas
 local function cancelAllPurchases()
     for scriptName, _ in pairs(activePurchases) do
-        activePurchases[scriptName] = false  -- Detener la compra
+        activePurchases[scriptName] = false
         print(scriptName .. " cancelado.")
     end
 end
 
--- Conectar el botón de cancelación
 CancelButton.MouseButton1Click:Connect(cancelAllPurchases)
 
 -- Función para mostrar los resultados de la búsqueda
 local function showResults(searchQuery)
-    -- Eliminar los botones antiguos
+    -- Eliminar los botones anteriores
     for _, child in pairs(ResultsFrame:GetChildren()) do
         if child:IsA("TextButton") then
             child:Destroy()
         end
     end
 
-    -- Mostrar los resultados de la búsqueda
+    local buttonHeight = 30
+    local padding = 5
+    local totalHeight = 0
+    local yOffset = 0
+
     for scriptName, _ in pairs(Scripts) do
         if string.find(string.lower(scriptName), string.lower(searchQuery)) then
             local ResultButton = Instance.new("TextButton")
-            ResultButton.Name = "ResultButton"
             ResultButton.Parent = ResultsFrame
             ResultButton.Text = scriptName
-            ResultButton.Size = UDim2.new(1, -10, 0, 25)
-            ResultButton.Position = UDim2.new(0, 5, 0, (#ResultsFrame:GetChildren() - 1) * 30)
+            ResultButton.Size = UDim2.new(1, -10, 0, buttonHeight)
+            ResultButton.Position = UDim2.new(0, 5, 0, yOffset)
             ResultButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
             ResultButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+            ResultButton.Font = Enum.Font.Gotham
+            ResultButton.TextSize = 14
+
+            -- Borde redondeado para los botones
+            local ButtonCorner = Instance.new("UICorner")
+            ButtonCorner.CornerRadius = UDim.new(0, 5)
+            ButtonCorner.Parent = ResultButton
 
             -- Verificar si la compra ya está activa
             local isToggledLocal = activePurchases[scriptName] or false
 
-            -- Toggle para ejecución repetitiva de compra
+            -- Toggle para ejecución repetitiva
             ResultButton.MouseButton1Click:Connect(function()
-                -- Si ya está ejecutándose, detenerlo
                 isToggledLocal = not isToggledLocal
                 if isToggledLocal then
-                    -- Marcar la compra como activa
                     activePurchases[scriptName] = true
-                    while isToggledLocal and activePurchases[scriptName] do  -- Continuar mientras esté activado
-                        Scripts[scriptName]()  -- Ejecutar la compra
-                        wait(0.06)
+                    while isToggledLocal and activePurchases[scriptName] do
+                        Scripts[scriptName]()
+                        task.wait(0.005)
                     end
                 else
-                    -- Detener la compra
                     activePurchases[scriptName] = false
                 end
             end)
+
+            -- Ajustar posición para el siguiente botón
+            yOffset = yOffset + buttonHeight + padding
+            totalHeight = yOffset
         end
     end
+
+    -- Ajustar el tamaño del ScrollFrame dinámicamente
+    ResultsFrame.CanvasSize = UDim2.new(0, 0, 0, totalHeight)
 end
 
 -- Búsqueda dinámica
 SearchBox:GetPropertyChangedSignal("Text"):Connect(function()
     showResults(SearchBox.Text)
 end)
+
+-- Mostrar todos los scripts por defecto
+showResults("")
