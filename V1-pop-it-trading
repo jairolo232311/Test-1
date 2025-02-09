@@ -460,7 +460,7 @@ local function showResults(searchQuery)
                     activePurchases[scriptName] = true
                     while isToggledLocal and activePurchases[scriptName] do
                         Scripts[scriptName]()
-                        wait(0.005)
+                        wait(0.01)
                     end
                 else
                     activePurchases[scriptName] = false
