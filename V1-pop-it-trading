@@ -166,7 +166,7 @@ end,
         local args = { [1] = "Flower Red" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
-    ["Green lemon"] = function()
+    ["Green Ooze"] = function()
         local args = { [1] = "Green Ooze" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
@@ -186,7 +186,7 @@ end,
         local args = { [1] = "Paperclip" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
-["Gold Paperclip (It is necessary to be VIP)"] = function()
+["Gold Paperclip (VIP required)"] = function()
         local args = { [1] = "Paperclip Gold" }
         game:GetService("ReplicatedStorage").RemoteEvents.BuyItemCash:FireServer(unpack(args))
     end,
