@@ -22,7 +22,7 @@ local allowedItems = {
     "Hand Green", "Heart Headphones", "Heart Balloon", "Demogorgan", "Demogorgan Kawaii", "Heart Lightstick", 
     "Corazón Cake", "Heart Gift", "Heart Light", "Hand Cyan", "Hand Blue", "Hand Red", "Hand Orange", 
     "Hand Black", "Hand White", "Hand Purple", "Hand Pink", "E", "D", "C", "B", "A", "F", "Squid", "Green Ooze",
-    "Puzzler Head", "Puzzle Key", "XOX Controller", "Tix Tox", "Tweet", "Inxta", "Silver", "Pink Gumdrop", "Candi Corn", "Pink Lolli", "Purple Lolli", "Blue Gumdrop"
+    "Puzzler Head", "Puzzle Key", "XOX Controller", "Tix Tox", "Tweet", "Inxta", "Silver", "Pink Gumdrop", "Candi Corn", "Pink Lolli", "Purple Lolli", "Blue Gumdrop", "ballerina cupuchina", "capibarello cocossini", "chimpanzinni bananini", "bombardilo cocodilo", "tung tung tung sahur", "tralalero tralala", "bobrito bandito", "brr brr patapin"
 }
 
 for _, item in ipairs(shopFrame:GetChildren()) do
