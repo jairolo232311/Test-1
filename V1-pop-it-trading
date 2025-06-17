@@ -1,10 +1,8 @@
--- Crear la ScreenGui
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "ScriptSearcher"
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 ScreenGui.ResetOnSpawn = false
 
--- Marco principal
 local MainFrame = Instance.new("Frame")
 MainFrame.Name = "MainFrame"
 MainFrame.Parent = ScreenGui
@@ -16,12 +14,10 @@ MainFrame.BorderSizePixel = 0
 MainFrame.Active = true
 MainFrame.Draggable = true
 
--- Bordes redondeados
 local UICorner = Instance.new("UICorner")
 UICorner.CornerRadius = UDim.new(0, 10)
 UICorner.Parent = MainFrame
 
--- Título
 local Title = Instance.new("TextLabel")
 Title.Name = "Title"
 Title.Parent = MainFrame
@@ -43,7 +39,6 @@ local ImageCorner = Instance.new("UICorner")
 ImageCorner.CornerRadius = UDim.new(0.1, 0)
 ImageCorner.Parent = Image
 
--- Campo de texto para buscar
 local SearchBox = Instance.new("TextBox")
 SearchBox.Name = "SearchBox"
 SearchBox.Parent = MainFrame
@@ -55,12 +50,10 @@ SearchBox.PlaceholderText = "Buscar..."
 SearchBox.TextSize = 14
 SearchBox.TextColor3 = Color3.fromRGB(255, 255, 255)
 
--- Bordes redondeados para el SearchBox
 local SearchCorner = Instance.new("UICorner")
 SearchCorner.CornerRadius = UDim.new(0, 5)
 SearchCorner.Parent = SearchBox
 
--- Marco para resultados de búsqueda
 local ResultsFrame = Instance.new("ScrollingFrame")
 ResultsFrame.Name = "ResultsFrame"
 ResultsFrame.Parent = MainFrame
@@ -70,12 +63,10 @@ ResultsFrame.Position = UDim2.new(0.05, 0, 0.30, 0)
 ResultsFrame.ScrollBarThickness = 3
 ResultsFrame.CanvasSize = UDim2.new(0, 0, 0, 0)
 
--- Bordes redondeados para el ResultsFrame
 local ResultsCorner = Instance.new("UICorner")
 ResultsCorner.CornerRadius = UDim.new(0, 5)
 ResultsCorner.Parent = ResultsFrame
 
--- Botón de cancelar
 local CancelButton = Instance.new("TextButton")
 CancelButton.Name = "CancelButton"
 CancelButton.Parent = MainFrame
@@ -91,7 +82,6 @@ local ButtonCorner = Instance.new("UICorner")
             ButtonCorner.CornerRadius = UDim.new(0, 5)
             ButtonCorner.Parent = CancelButton
 
--- Lista de scripts
 local Scripts = {
     ["Drop Red Loot"] = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/Test-1/refs/heads/main/Drop-Red-Loot"))()
@@ -406,10 +396,10 @@ end
 
 }
 
--- Tabla para gestionar compras activas
+
 local activePurchases = {}
 
--- Función para cancelar todas las compras activas
+
 local function cancelAllPurchases()
     for scriptName, _ in pairs(activePurchases) do
         activePurchases[scriptName] = false
@@ -419,7 +409,6 @@ end
 
 CancelButton.MouseButton1Click:Connect(cancelAllPurchases)
 
--- Función para mostrar los resultados de la búsqueda
 local function showResults(searchQuery)
     -- Eliminar los botones anteriores
     for _, child in pairs(ResultsFrame:GetChildren()) do
@@ -445,15 +434,15 @@ local function showResults(searchQuery)
             ResultButton.Font = Enum.Font.Gotham
             ResultButton.TextSize = 14
 
-            -- Borde redondeado para los botones
+
             local ButtonCorner = Instance.new("UICorner")
             ButtonCorner.CornerRadius = UDim.new(0, 5)
             ButtonCorner.Parent = ResultButton
 
-            -- Verificar si la compra ya está activa
+            
             local isToggledLocal = activePurchases[scriptName] or false
 
-            -- Toggle para ejecución repetitiva
+            
             ResultButton.MouseButton1Click:Connect(function()
                 isToggledLocal = not isToggledLocal
                 if isToggledLocal then
@@ -467,20 +456,20 @@ local function showResults(searchQuery)
                 end
             end)
 
-            -- Ajustar posición para el siguiente botón
+            
             yOffset = yOffset + buttonHeight + padding
             totalHeight = yOffset
         end
     end
 
-    -- Ajustar el tamaño del ScrollFrame dinámicamente
+    
     ResultsFrame.CanvasSize = UDim2.new(0, 0, 0, totalHeight)
 end
 
--- Búsqueda dinámica
+
 SearchBox:GetPropertyChangedSignal("Text"):Connect(function()
     showResults(SearchBox.Text)
 end)
 
--- Mostrar todos los scripts por defecto
+
 showResults("")
