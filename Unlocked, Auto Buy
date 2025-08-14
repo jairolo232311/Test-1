@@ -2,3 +2,12 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/Test-1/
 
 wait(0.2)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/Test-1/refs/heads/main/Auto-Buy"))()
+
+wait(0.2)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/X/refs/heads/main/V-1"))()
+
+wait(0.2)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/jairolo232311/X/refs/heads/main/D-2"))()
+
+wait(0.2)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Nadiehp/Golden-ticket-zone-/refs/heads/main/Zone%20golden%20ticket"))()
