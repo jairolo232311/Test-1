@@ -47,7 +47,7 @@ local addEmojiTo = {"Flower Rainbow", "Flower Red", "Flower White", "Flower Blac
 "E", "D", "C", "B", "A", "F", "Squid", "Green Ooze", "Puzzler Head", "Puzzle Key", "XOX Controller", "Tix Tox", "Tweet", 
 "Inxta", "Silver", "Pink Gumdrop", "Candi Corn", "Pink Lolli", "Purple Lolli", "Blue Gumdrop", "ballerina cupuchina",
 "capibarello cocossini", "chimpanzinni bananini", "bombardilo cocodilo", "tung tung tung sahur", "tralalero tralala",
-"bobrito bandito", "brr brr patapin", "bonecca ambalabu", "Udin din din", "Lirili Larila", "Trippi Troppi", "Capuchino", "Garam"}  
+"bobrito bandito", "brr brr patapin", "bonecca ambalabu", "Udin din din", "Lirili Larila", "Trippi Troppi", "Capuchino", "Garam", "T Rex"}  
 local nameMappings = {["Lil Dude Real"] = "Seriously Dude"}
 local emoji = " 🤑"
 
