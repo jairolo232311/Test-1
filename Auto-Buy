@@ -26,7 +26,7 @@ local allowedItems = {
     "Puzzler Head", "Puzzle Key", "XOX Controller", "Tix Tox", "Tweet", "Inxta", "Silver", "Pink Gumdrop", "Candi Corn",
     "Pink Lolli", "Purple Lolli", "Blue Gumdrop", "ballerina cupuchina", "capibarello cocossini", "chimpanzinni bananini", 
     "bombardilo cocodilo", "tung tung tung sahur", "tralalero tralala", "bobrito bandito", "brr brr patapin", "bonecca ambalabu", 
-    "Udin din din", "Lirili Larila", "Trippi Troppi", "Capuchino", "Garam"
+    "Udin din din", "Lirili Larila", "Trippi Troppi", "Capuchino", "Garam", "T Rex"
 }
 
 for _, item in ipairs(shopFrame:GetChildren()) do
