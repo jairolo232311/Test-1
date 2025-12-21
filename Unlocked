@@ -32,7 +32,7 @@ local removeAttributesFrom = {"Flower Rainbow",
    "tralalero tralala", "bobrito bandito",
    "brr brr patapin", "bonecca ambalabu", 
    "Udin din din", "Lirili Larila", 
-   "Trippi Troppi", "Capuchino", "Garam", "T Rex"}
+   "Trippi Troppi", "Capuchino", "Garam"}
 local attributesToRemove = {"SpawnedBy", "Retired", "IsMerch", "ComboLocked", "PuzzleReward", "CodeOnly"}
 
 local addEmojiTo = {"Flower Rainbow", "Flower Red", "Flower White", "Flower Black", "Flower Yellow", "Flower Blue",
